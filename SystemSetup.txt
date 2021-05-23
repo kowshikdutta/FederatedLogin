@@ -1,0 +1,20 @@
+sudo useradd -m admin1 -p PASSWORD
+
+sudo cp /home/ec2-user/.ssh/authorized_keys  /home/admin1/.ssh
+
+sudo chown -R admin1:admin /home/admin1/.ssh
+
+/sbin/service sshd start
+
+visudo -f /etc/sodoers
+
+%group_of_new_user ALL=(ALL) NOPASSWD: ALL 
+
+
+sudo yum install java-11-amazon-corretto
+
+yum list installed | grep python3
+
+sudo mysqldump -u [user] -p [database_name] > [filename].sql
+
+mysql -u [user] -p [database_name] < [filename].sql
